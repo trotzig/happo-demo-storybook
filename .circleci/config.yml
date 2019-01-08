@@ -1,18 +1,11 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
-version: 2
-jobs:
-  build:
-    docker:
-      - image: circleci/node:10
+version: 2.1
 
-    working_directory: ~/repo
+orbs:
+  happo: happo/happo@dev:seventh
 
-    steps:
-      - checkout
-      - run: yarn install
-      - run: yarn happo-ci
-
+workflows:
+  version: 2.1
+  run_all:
+    jobs:
+      - happo/run
 
