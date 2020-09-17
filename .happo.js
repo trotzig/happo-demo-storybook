@@ -1,3 +1,5 @@
+const path = require('path');
+
 const { RemoteBrowserTarget } = require('happo.io');
 const happoPluginStorybook = require('happo-plugin-storybook');
 
@@ -31,6 +33,8 @@ module.exports = {
   plugins: [
     happoPluginStorybook(),
   ],
+
+  stylesheets: [path.resolve(__dirname, 'styles.css')],
 
   type: 'react',
 };
